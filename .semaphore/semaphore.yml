@@ -16,3 +16,4 @@ blocks:
         commands:
           - checkout
           - java -version
+          - mvn -version
