@@ -15,8 +15,7 @@ blocks:
       - name: Maven build
         commands:
           - checkout
-          - java -version
-          - mvn -version
+          - mvn clean package
       prologue:
         commands:
           - DEBIAN_FRONTEND=noninteractive && sudo apt -yq install maven
