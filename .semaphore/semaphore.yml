@@ -1,0 +1,23 @@
+version: v1.0
+name: YAML file example for Go project
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+ - name: Inspect Linux environment
+   task:
+      jobs:
+        - name: Execute hw.go
+          commands:
+            - echo $SEMAPHORE_PIPELINE_ID
+            - echo $HOME
+            - echo $SEMAPHORE_GIT_DIR
+            - echo $PI
+      prologue:
+          commands:
+            - checkout
+      env_vars:
+           - name: PI
+             value: "3.14159"
