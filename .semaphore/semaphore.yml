@@ -19,4 +19,4 @@ blocks:
           - mvn -version
       prologue:
         commands:
-          - sudo apt install maven
+          - DEBIAN_FRONTEND=noninteractive && sudo apt -yq install maven
