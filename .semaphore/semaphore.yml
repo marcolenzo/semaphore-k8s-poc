@@ -18,7 +18,8 @@ blocks:
           - mvn clean package
       prologue:
         commands:
-          - EBIAN_FRONTEND=noninteractive
+          - DEBIAN_FRONTEND=noninteractive
+          - sudo apt-get update
           - sudo apt -yq purge default-jdk java-common
           - sudo dpkg --purge --force-depends ca-certificates-java
           - sudo apt -yq install openjdk-8-jre
