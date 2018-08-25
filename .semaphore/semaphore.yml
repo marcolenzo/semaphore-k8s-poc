@@ -13,6 +13,8 @@ blocks:
           value: ci
       jobs:
       - name: Maven build
+        prologue:
+          - sudo apt install maven
         commands:
           - checkout
           - java -version
