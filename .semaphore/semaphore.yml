@@ -18,10 +18,11 @@ blocks:
           - mvn clean package
       prologue:
         commands:
-          - sudo apt purge default-jdk java-common
+          - EBIAN_FRONTEND=noninteractive
+          - sudo apt -yq purge default-jdk java-common
           - sudo dpkg --purge --force-depends ca-certificates-java
-          - sudo apt install openjdk-8-jre
-          - sudo apt-get install ca-certificates-java
-          - sudo apt purge openjdk-8-jre
-          - sudo apt install default-jdk
-          - DEBIAN_FRONTEND=noninteractive && sudo apt -yq install maven
+          - sudo apt -yq install openjdk-8-jre
+          - sudo apt -yq install ca-certificates-java
+          - sudo apt -yq purge openjdk-8-jre
+          - sudo apt -yq install default-jdk
+          - sudo apt -yq install maven
