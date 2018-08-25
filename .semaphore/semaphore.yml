@@ -18,7 +18,6 @@ blocks:
           - mvn clean package
       prologue:
         commands:
-          - sudo apt purge openjdk-default java-common
           - sudo apt purge default-jdk java-common
           - sudo dpkg --purge --force-depends ca-certificates-java
           - sudo apt install openjdk-8-jre
